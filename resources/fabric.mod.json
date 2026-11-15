@@ -1,0 +1,30 @@
+{
+    "schemaVersion": 1,
+    "id": "flattools",
+    "version": "${version}",
+    "name": "Flat Tools",
+    "description": "Development tools for working with a flat multiloader project.",
+    "authors": [
+        "JX_Snack"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "All Rights Reserved",
+    "icon": "assets/flattools/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "me.jxsnack.flattools.fabric.FTFabric"
+        ]
+    },
+    "mixins": [
+        "flattools.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "minecraft": "~1.21.1",
+        "java": ">=21"
+    }
+}

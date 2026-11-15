@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "flattools"
+version = "${version}"
+displayName = "flattools"
+description = '''Development tools for working with a flat multiloader project.'''
+authors = "JX_Snack"
+logoFile = "assets/flattools/icon.png"
+
+[[mixins]]
+config = "flattools.mixins.json"
+
+[[dependencies.flattools]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.flattools]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
