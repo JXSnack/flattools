@@ -2,3 +2,5 @@ group me.jxsnack.flattools
 follow github.com/JXSnack/fmod-fabric 1.21.1
 
 ignore neoforge/
+
+require maven@net.fabricmc.fabric-api:fabric-api 0.116.17+1.21.1

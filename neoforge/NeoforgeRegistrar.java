@@ -1,7 +1,12 @@
 package me.jxsnack.flattools.neoforge;
 
+import me.jxsnack.flattools.registry.BlockEntities;
 import me.jxsnack.flattools.registry.Registrar;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -28,5 +33,21 @@ public class NeoforgeRegistrar implements Registrar {
             return created;
         });
         return deferred.register(name, factory);
+    }
+
+    @Override
+    public <T extends BlockEntity> Supplier<BlockEntityType<T>> blockEntity(
+            String name,
+            BlockEntities.Supplier<T> factory,
+            Supplier<? extends Block> block
+    ) {
+        return register(
+                BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                name,
+                () -> BlockEntityType.Builder.<T>of(
+                        factory::create,
+                        block.get()
+                ).build(null)
+        );
     }
 }
