@@ -35,3 +35,8 @@ public NeoforgeMod(IEventBus bus) {
     CommonMod.init(new NeoforgeRegistrar(CommonMod.MOD_ID, bus));
 }
 ```
+
+## Block entities
+
+Instead of forwarding a block entity type through the constructor, use `BlockEntities.typeOf(BlockState)` or 
+`BlockEntities.typeOf(ResourceLocation)`
