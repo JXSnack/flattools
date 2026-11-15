@@ -15,9 +15,7 @@
     "icon": "assets/flattools/icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
-            "me.jxsnack.flattools.fabric.FTFabric"
-        ]
+        "main": []
     },
     "mixins": [
         "flattools.mixins.json"
